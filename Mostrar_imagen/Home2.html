@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Page</title>
+	<style>
+		body {
+			background-image: url(PurpleWaves.png);
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+		}
+	</style>
+	<script>
+		function reproducirGIF() {
+			var gif = document.createElement("img");
+			gif.src = "colorfart.gif";
+			document.body.appendChild(gif);
+			document.getElementById("reproducir").disabled = true;
+		}
+	</script>
+</head>
+<body>
+	<button id="reproducir" onclick="reproducirGIF()">Reproducir GIF</button>
+</body>
+</html>

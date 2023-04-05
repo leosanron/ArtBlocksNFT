@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Imagenes creadas con Python</title>
+  <link rel="stylesheet" href="config.css">
+</head>
+<body>
+  <h1>Imagenes creadas con Python</h1>
+  <img src="imagen_0.png" alt="Imagen 0" id="imagen">
+  
+  <script>
+    // Define un array con las rutas de las imágenes
+    var imagenes = [];
+
+    for (var i = 0; i <= 10; i++) {
+    var ruta = "imagen_" + i + ".png";
+    imagenes.push(ruta);
+    }
+        
+    // Obtiene la imagen por su ID
+    var imagen = document.getElementById("imagen");
+    
+    // Define un contador para llevar el seguimiento de la imagen actual
+    var contador =-1;
+    
+    // Define una función que cambie la imagen y reinicie el temporizador
+    function cambiarImagen() {
+      // Incrementa el contador y asegura que no se exceda del número de imágenes
+      contador = (contador + 1) % imagenes.length;
+      
+      // Cambia la ruta de la imagen
+      imagen.src = imagenes[contador];
+      
+      // Espera 1 segundos y cambia la imagen
+      setTimeout(cambiarImagen, 200);
+    }
+    
+    // Inicia el temporizador
+    setTimeout(cambiarImagen, 200);
+  </script>
+</body>
+</html>
+
+
+
+
